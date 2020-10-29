@@ -18,12 +18,13 @@ public class CrawlDanTri {
             Scanner scanner = new Scanner(new InputStreamReader(url.openStream()));
             scanner.useDelimiter("\\Z");
             String content = scanner.next();
-//            content = content.replaceAll("\\n+", "");
-            Pattern pattern = Pattern.compile("<a\\sdata-utm=\"Cate_TheGioi\\|MainList\\|1.*\"\\stitle=\"(.*?)\"");
-            Matcher matcher = pattern.matcher(content);
-            while (matcher.find()) {
-                System.out.println(matcher.group(1));
-            }
+            content = content.replaceAll(System.lineSeparator(), "");
+            System.out.println(content);
+//            Pattern pattern = Pattern.compile("MainList\\|.*title=\"(.*?)\"");
+//            Matcher matcher = pattern.matcher(content);
+//            while (matcher.find()) {
+//                System.out.println(matcher.group(1));
+//            }
             scanner.close();
         } catch (IOException e) {
             e.printStackTrace();
