@@ -20,11 +20,11 @@ public class CrawlDanTri {
             String content = scanner.next();
             content = content.replaceAll(System.lineSeparator(), "");
             System.out.println(content);
-//            Pattern pattern = Pattern.compile("MainList\\|.*title=\"(.*?)\"");
-//            Matcher matcher = pattern.matcher(content);
-//            while (matcher.find()) {
-//                System.out.println(matcher.group(1));
-//            }
+            Pattern pattern = Pattern.compile("MainList\\|.*title=\"(.*?)\"");
+            Matcher matcher = pattern.matcher(content);
+            while (matcher.find()) {
+                System.out.println(matcher.group(1));
+            }
             scanner.close();
         } catch (IOException e) {
             e.printStackTrace();
