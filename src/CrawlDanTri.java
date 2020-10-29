@@ -18,8 +18,7 @@ public class CrawlDanTri {
             Scanner scanner = new Scanner(new InputStreamReader(url.openStream()));
             scanner.useDelimiter("\\Z");
             String content = scanner.next();
-            content = content.replaceAll(System.lineSeparator(), "");
-
+//            content = content.replaceAll(System.lineSeparator(), "");
             Pattern pattern = Pattern.compile("MainList\\|.*title=\"(.*?)\"");
             Matcher matcher = pattern.matcher(content);
             while (matcher.find()) {
